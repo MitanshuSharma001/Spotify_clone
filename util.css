@@ -1,0 +1,9 @@
+.img {
+    filter: invert(1);
+}
+a{
+    color: #cccccc;
+}
+a:hover{
+    color: #ffffff;
+}

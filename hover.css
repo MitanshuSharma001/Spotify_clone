@@ -1,0 +1,19 @@
+.playlist:hover{
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+.playlistsearch:hover{
+    background-color: #272727;
+    cursor: pointer;
+}
+.logincontainer .login:hover{
+    scale: 1.2;
+    transition: scale 0.9s ease-in-out 0.9s;
+    cursor: pointer;
+}
+.logincontainer .signup:hover{
+    cursor: pointer;
+}
+.playarea img{
+    cursor: pointer;
+}
