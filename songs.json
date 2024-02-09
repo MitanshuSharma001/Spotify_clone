@@ -76,5 +76,29 @@
     "artistname": "Amit Trivedi",
     "songurl": "audiosong13.mp3",
     "songpicurl": "https://i.scdn.co/image/ab67616d0000b2733ed3cfb32d05a07898da02b4"
+  },
+  {
+    "songname": "Lutt Putt Gaya(Dunki)",
+    "artistname": "Arijit Singh",
+    "songurl": "audiosong14.mp3",
+    "songpicurl": "https://i.scdn.co/image/ab67616d0000b2731a2e85cf59d754808254425f"
+  },
+  {
+    "songname": "Tum Kya Mile",
+    "artistname": "Arijit Singh",
+    "songurl": "audiosong15.mp3",
+    "songpicurl": "https://i.scdn.co/image/ab67616d0000b27327725fe05e8b7a4e99cd15da"
+  },
+  {
+    "songname": "Dil Diyan Gallan",
+    "artistname": "Atif Aslam",
+    "songurl": "audiosong16.mp3",
+    "songpicurl": "https://i.scdn.co/image/ab67616d0000b273576521b1bf3ec2fd7fdfcbd5"
+  },
+  {
+    "songname": "Fakira",
+    "artistname": "Sanam & Neeti Mohan",
+    "songurl": "audiosong17.mp3",
+    "songpicurl": "https://i.scdn.co/image/ab67616d0000b2731500ba98cfa8ee9dd2d4c7de"
   }
 ]
