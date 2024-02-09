@@ -113,6 +113,7 @@ playareaplaybtn.addEventListener("click", function () {
     document.querySelector(".bar .circle").style.display = "block"
     playareaplaybtn.style.display = "none"
     playareapausebtn.style.display = "block"
+    playareapausebtn.style.animationFillMode = "forwards"
     playingsongicon.src = "picpauseicon.svg"
 })
 console.log(document.querySelector(".songname1").innerHTML)
