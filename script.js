@@ -77,8 +77,14 @@ const main = async() =>{
                     if (Math.floor(currplayaudio.currentTime%60) < 10) {
                         currentdur = `0${Math.floor(currplayaudio.currentTime/60)}:0${Math.floor(currplayaudio.currentTime%60)}`
                     }
+                    else if (Math.floor(currplayaudio.currentTime/60) >=10 && Math.floor(currplayaudio.currentTime%60)<10) {
+                        currentdur = `0${Math.floor(currplayaudio.currentTime/60)}:0${Math.floor(currplayaudio.currentTime%60)}`
+                    }
+                    else if (Math.floor(currplayaudio.currentTime/60) >=10) {
+                        currentdur = `0${Math.floor(currplayaudio.currentTime/60)}:${Math.floor(currplayaudio.currentTime%60)}`
+                    }
                     else {
-                        currentdur = `${Math.floor(currplayaudio.currentTime/60)}:${Math.floor(currplayaudio.currentTime%60)}`
+                        currentdur = `0${Math.floor(currplayaudio.currentTime/60)}:${Math.floor(currplayaudio.currentTime%60)}`
                     }
                     document.querySelector('.songduration').innerHTML = `${currentdur} / ${Math.floor(currplayaudio.duration/60)}:${Math.floor(currplayaudio.duration%60)}`
                 })
