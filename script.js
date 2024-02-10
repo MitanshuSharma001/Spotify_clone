@@ -47,6 +47,8 @@ const main = async() =>{
                     document.querySelector(".bar .circle").style.display = "block"
                     currplayaudio = audios[i]
                     console.log(`${songsall[i-1].songname}`)
+                    document.querySelector('.songname2').innerHTML = `${songsall[i-1].songname}`
+                    document.querySelector('.songartist1').innerHTML = `${songsall[i-1].artistname}`
                     if(document.querySelector(`.button${i} .picplayicon`).src.includes("picplayicon.svg")) {
                         document.querySelector(`.button${i} .picplayicon`).src = "picpauseicon.svg"
                         document.querySelector(".playarea .pause").style.display = "block"
@@ -71,6 +73,14 @@ const main = async() =>{
                 audios[i].addEventListener("timeupdate", function () {
                     document.querySelector(".bar .seekbar").style.width = `${(audios[i].currentTime/audios[i].duration)*100}%`
                     document.querySelector(".bar .circle").style.left = `${(audios[i].currentTime/audios[i].duration)*100-1}%`
+                    let currentdur = null;
+                    if (Math.floor(currplayaudio.currentTime%60) < 10) {
+                        currentdur = `0${Math.floor(currplayaudio.currentTime/60)}:0${Math.floor(currplayaudio.currentTime%60)}`
+                    }
+                    else {
+                        currentdur = `${Math.floor(currplayaudio.currentTime/60)}:${Math.floor(currplayaudio.currentTime%60)}`
+                    }
+                    document.querySelector('.songduration').innerHTML = `${currentdur} / ${Math.floor(currplayaudio.duration/60)}:${Math.floor(currplayaudio.duration%60)}`
                 })
                 let progressbar = document.querySelector(".bar")
                 document.querySelector(".bar").onclick = function(e) {
