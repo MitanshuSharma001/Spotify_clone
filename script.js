@@ -5,6 +5,7 @@ let currplayaudio = null;
 let numberofsongs = 10;
 let playingsongicon = null;
 let songsall;
+let currnum;
 const main = async() =>{
         let p = await fetch("songs.json")
         songsall = await p.json()
@@ -44,6 +45,7 @@ const main = async() =>{
                      }
                     document.querySelector(".playareaseekbar").style.display = "flex"
                     audios[i].play()
+                    currnum = i
                     document.querySelector(".bar .circle").style.display = "block"
                     currplayaudio = audios[i]
                     console.log(`${songsall[i-1].songname}`)
@@ -87,6 +89,33 @@ const main = async() =>{
                         currentdur = `0${Math.floor(currplayaudio.currentTime/60)}:${Math.floor(currplayaudio.currentTime%60)}`
                     }
                     document.querySelector('.songduration').innerHTML = `${currentdur} / ${Math.floor(currplayaudio.duration/60)}:${Math.floor(currplayaudio.duration%60)}`
+                
+                //12 feb 2024--start
+                if (currplayaudio.currentTime == currplayaudio.duration) {
+                    document.querySelector(".playarea .pause").style.display = "none"
+                    document.querySelector(".playarea .reset").style.display = "block"
+                    document.querySelector(`.button${i} .picplayicon`).src = "picplayicon.svg"
+                }
+
+                let reset = document.querySelector('.playarea .reset')
+                reset.addEventListener('click', ()=>{
+                    document.querySelector(".playarea .pause").style.display = "block"
+                    document.querySelector(".playarea .reset").style.display = "none"
+                    document.querySelector(`.button${i} .picplayicon`).src = "picpauseicon.svg"
+                    currplayaudio.currentTime = 0
+                    currplayaudio.play()
+                    let zx = document.querySelectorAll(`.picplaybutton .picplayicon`)
+                    console.log(zx)
+                    // .src.includes("picpauseicon.svg")
+                    zx.forEach((element)=>{
+                        if (element.src.includes("picpauseicon.svg")) {
+                            element.src = "picplayicon.svg"
+                            document.querySelector(`.button${currnum} .picplayicon`).src = "picpauseicon.svg"
+                        }
+                    })
+                })
+                //12 feb 2024--end
+                
                 })
                 let progressbar = document.querySelector(".bar")
                 document.querySelector(".bar").onclick = function(e) {
