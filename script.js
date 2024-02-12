@@ -55,6 +55,7 @@ const main = async() =>{
                         document.querySelector(`.button${i} .picplayicon`).src = "picpauseicon.svg"
                         document.querySelector(".playarea .pause").style.display = "block"
                         document.querySelector(".playarea .play").style.display = "none"
+                        document.querySelector(".playarea .reset").style.display = "none"
                         let playicons = document.querySelectorAll(".picplayicon")
                         playicons.forEach(playicon =>{
                             if (playicon.src.includes("picpauseicon.svg") && playicon !== document.querySelector(`.button${i} .picplayicon`)) {
