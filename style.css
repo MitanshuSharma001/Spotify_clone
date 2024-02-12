@@ -283,6 +283,9 @@ body {
 .playarea .play{
     display: none;
 }
+.playarea .reset{
+    display: none;
+}
 .playarea img {
     width: 2.4rem;
 }
