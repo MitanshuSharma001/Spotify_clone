@@ -10,12 +10,21 @@ const main = async() =>{
         let p = await fetch("songs.json")
         songsall = await p.json()
         console.log("Loaded Successfully")
+        let songlength = songsall.length
+        // console.log(songlength);
+        document.querySelector(".songcount").innerHTML = `Songs: ${songlength}`
         console.log(songsall[0])
         console.log(songsall.length)
     for (let i=1;i<=songsall.length;i++) {
+        let songsum = document.createElement("div")
+        songsum.classList.add(`songnum`)
+        songsum.classList.add(`songnum${i}`)
+        songsum.innerHTML = `<img src="${songsall[i-1].songpicurl}" height="50px" width="50px"><a href="#song${i}" onclick="clicklink()">${songsall[i-1].songname}</a>`
+        document.querySelector(".songslist").appendChild(songsum)
         let new1 = document.createElement("div")
         new1.classList.add(`song`)
         new1.classList.add(`song${i}`)
+        new1.id = `song${i}`
         new1.innerHTML = 
         `<div class="songpic">
         <img src="${songsall[i-1].songpicurl}" alt="">
@@ -161,6 +170,17 @@ playareaplaybtn.addEventListener("click", function () {
     playareapausebtn.style.display = "block"
     playingsongicon.src = "picpauseicon.svg"
 })
+document.querySelector(".songcount").addEventListener("click", function() {
+    if (document.querySelector(".songslist").style.display == "flex") {
+        document.querySelector(".songslist").style.display = "none"
+    }
+    else {
+    document.querySelector(".songslist").style.display = "flex"
+    }
+} )
+clicklink =()=>{
+    document.querySelector(".songslist").style.display = "none"
+}
 console.log(document.querySelector(".songname1").innerHTML)
 console.log(currplayaudio)
 
